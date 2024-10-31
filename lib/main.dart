@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'autoroute/main.dart';
 import 'go_router/main.dart';
 import 'modular/main.dart';
+import 'rx/main.dart';
 
 void main() {
   // Go router
@@ -12,5 +13,8 @@ void main() {
   // runApp(const ModularEntryWidget());
 
   // AutoRoute
-  runApp(const AutoRouteEntryWidget());
+  // runApp(const AutoRouteEntryWidget());
+
+  // Rx state
+  runApp(rxEntry());
 }
