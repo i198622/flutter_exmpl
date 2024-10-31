@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'autoroute/main.dart';
 import 'go_router/main.dart';
 import 'modular/main.dart';
 
@@ -8,7 +9,8 @@ void main() {
   // runApp(const EntryWidget());
 
   // Modular
-  runApp(const ModularEntryWidget());
+  // runApp(const ModularEntryWidget());
 
-  // Mobx
+  // AutoRoute
+  runApp(const AutoRouteEntryWidget());
 }
