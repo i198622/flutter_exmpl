@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'autoroute/main.dart';
+import 'bloc/main.dart';
 import 'go_router/main.dart';
 import 'modular/main.dart';
 import 'rx/main.dart';
@@ -16,5 +17,8 @@ void main() {
   // runApp(const AutoRouteEntryWidget());
 
   // Rx state
-  runApp(rxEntry());
+  // runApp(rxEntry());
+
+  // Bloc
+  // runApp(const BlocEntryWidget());
 }
