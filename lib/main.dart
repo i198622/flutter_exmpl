@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'autoroute/main.dart';
 import 'bloc/main.dart';
+import 'chat/main.dart';
 import 'go_router/main.dart';
 import 'modular/main.dart';
 import 'rx/main.dart';
@@ -21,4 +22,7 @@ void main() {
 
   // Bloc
   // runApp(const BlocEntryWidget());
+
+  // Chat
+  runApp(const EntryChat());
 }
