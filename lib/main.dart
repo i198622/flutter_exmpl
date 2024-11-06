@@ -5,6 +5,7 @@ import 'bloc/main.dart';
 import 'chat/main.dart';
 import 'go_router/main.dart';
 import 'modular/main.dart';
+import 'navigation/main.dart';
 import 'rx/main.dart';
 
 void main() {
@@ -24,5 +25,8 @@ void main() {
   // runApp(const BlocEntryWidget());
 
   // Chat
-  runApp(const EntryChat());
+  // runApp(const EntryChat());
+
+  // Nav
+  runApp(const EntryNavigation());
 }
