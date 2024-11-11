@@ -19,6 +19,9 @@ dependencies:
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
   equatable: ^2.0.5
+  provider:
+  redux: ^5.0.0
+  flutter_redux: ^0.10.0
 
 dev_dependencies:
   flutter_test:

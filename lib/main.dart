@@ -6,6 +6,7 @@ import 'chat/main.dart';
 import 'go_router/main.dart';
 import 'modular/main.dart';
 import 'navigation/main.dart';
+import 'redux/main.dart';
 import 'rx/main.dart';
 import 'state_managment/main.dart';
 
@@ -32,5 +33,8 @@ void main() {
   // runApp(const EntryNavigation());
 
   // State Management
-  runApp(const StateEntry());
+  // runApp(const StateEntry());
+
+  // Redux state management
+  runApp(const ReduxEntry());
 }
