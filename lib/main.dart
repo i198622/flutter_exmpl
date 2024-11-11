@@ -7,6 +7,7 @@ import 'go_router/main.dart';
 import 'modular/main.dart';
 import 'navigation/main.dart';
 import 'rx/main.dart';
+import 'state_managment/main.dart';
 
 void main() {
   // Go router
@@ -28,5 +29,8 @@ void main() {
   // runApp(const EntryChat());
 
   // Nav
-  runApp(const EntryNavigation());
+  // runApp(const EntryNavigation());
+
+  // State Management
+  runApp(const StateEntry());
 }

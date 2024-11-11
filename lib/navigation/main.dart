@@ -6,12 +6,12 @@ import 'screens/second_screen.dart';
 
 class EntryNavigation extends StatelessWidget {
   const EntryNavigation({super.key});
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //     home: MainScreen(),
-  //   );
-  // }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MainScreen(),
+    );
+  }
 
   // @override
   // Widget build(BuildContext context) {

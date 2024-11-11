@@ -1,4 +1,3 @@
-
 abstract class MainRepositoryInterface {
   Future<String> getData();
 }
