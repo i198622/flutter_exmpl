@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'autoroute/main.dart';
 import 'bloc/main.dart';
 import 'chat/main.dart';
+import 'forms/main.dart';
 import 'go_router/main.dart';
 import 'modular/main.dart';
 import 'navigation/main.dart';
@@ -36,5 +37,8 @@ void main() {
   // runApp(const StateEntry());
 
   // Redux state management
-  runApp(const ReduxEntry());
+  // runApp(const ReduxEntry());
+
+  // Forms
+  runApp(const EntryForms());
 }
