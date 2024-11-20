@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'animations/main.dart';
 import 'autoroute/main.dart';
 import 'bloc/main.dart';
 import 'chat/main.dart';
@@ -40,5 +41,8 @@ void main() {
   // runApp(const ReduxEntry());
 
   // Forms
-  runApp(const EntryForms());
+  // runApp(const EntryForms());
+  
+  // Animations
+  runApp(const AnimationEntryScreen());
 }
