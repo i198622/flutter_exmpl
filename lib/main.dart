@@ -8,6 +8,7 @@ import 'forms/main.dart';
 import 'go_router/main.dart';
 import 'modular/main.dart';
 import 'navigation/main.dart';
+import 'new_widgets/main.dart';
 import 'redux/main.dart';
 import 'rx/main.dart';
 import 'state_managment/main.dart';
@@ -44,5 +45,7 @@ void main() {
   // runApp(const EntryForms());
   
   // Animations
-  runApp(const AnimationEntryScreen());
+  // runApp(const AnimationEntryScreen());
+
+  runApp(const NewWidgetsEntry());
 }
