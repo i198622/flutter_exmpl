@@ -2,10 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:ffi';
 import 'dart:isolate';
-
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 
 multipleFuture() async {
   final result = Future.wait([
@@ -18,66 +16,73 @@ multipleFuture() async {
 }
 
 completer() async {
-  final comp = Completer<Bool>();
-  final result = await comp.future;
+  final isLoaddedComp = Completer<Bool>();
+
+  // // ///isolateExample()
+
+  final result = await isLoaddedComp.future;
   print(result);
 }
 
 dynamic isolateExample() async {
-  final String jsonStr = await rootBundle.loadString('assets/data.json');
+  final jsonStr = await rootBundle.loadString('assets/data.json');
+  // final String jsonStr = await rootBundle.loadString('assets/data.json');
 
-  // final data = await Isolate.run(() {
-  //   return jsonDecode(jsonStr);
-  // });
+  final data = await Isolate.run(() {
+    return jsonDecode(jsonStr);
+  });
 
-  return jsonDecode(jsonStr);
+  return data;
 }
 
 class Model {
   final String title;
   final String subtitle;
+  final Model2 model2;
 
   Model({
     required this.title,
     required this.subtitle,
+    required this.model2,
   });
 
   factory Model.fromJson(Map<String, dynamic> json) {
     return Model(
       title: json['title'],
       subtitle: json['subtitle'],
+      model2: Model2.fromJson(json['model2']),
     );
   }
 
-  Map<dynamic, dynamic> toJson(Map<String, dynamic> json) {
+  Map<dynamic, dynamic> toJson() {
     return {
       'title': title,
       'subtitle': subtitle,
+      'model2': model2.toJson(),
     };
   }
 }
 
+class Model2 {
+  final String title;
+  final String subtitle;
 
-class ApiClient {
-  late final Dio _client;
+  Model2({
+    required this.title,
+    required this.subtitle,
+  });
 
-  ApiClient() {
-    _client = Dio(BaseOptions(
-      baseUrl: 'https://localhost',
-      connectTimeout: const Duration(seconds: 5),
-      receiveTimeout: const Duration(seconds: 10),
-    ));
+  factory Model2.fromJson(Map<String, dynamic> json) {
+    return Model2(
+      title: json['title'],
+      subtitle: json['subtitle'],
+    );
+  }
 
-    // _client.interceptors.add(InterceptorsWrapper(
-    //   onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
-    //     return handler.next(options);
-    //   },
-    //   onResponse: (Response response, ResponseInterceptorHandler handler) {
-    //     return handler.next(response);
-    //   },
-    //   onError: (DioException error, ErrorInterceptorHandler handler) {
-    //     return handler.next(error);
-    //   },
-    // ));
+  Map<dynamic, dynamic> toJson() {
+    return {
+      'title': title,
+      'subtitle': subtitle,
+    };
   }
 }

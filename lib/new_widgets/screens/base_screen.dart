@@ -22,6 +22,7 @@ class _BaseWidgetsScreenState extends State<BaseWidgetsScreen> {
         child: Column(
           children: [
             SegmentedButton(
+              multiSelectionEnabled: true,
               onSelectionChanged: (v) {
                 setState(() {
                   selected = v;
@@ -105,30 +106,31 @@ class _ElevatedScreenState extends State<ElevatedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        ElevatedButton(
-          onPressed: () {
-            ctrl.toggle();
-          },
-          child: OverlayPortal(
-            controller: ctrl,
-            overlayChildBuilder: (context) {
-              return Positioned(
-                left: 120,
-                top: 0,
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.red,
-                ),
-              );
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              ctrl.toggle();
             },
-            child: const Text('Hit me'),
+            child: OverlayPortal(
+              controller: ctrl,
+              overlayChildBuilder: (context) {
+                return Positioned(
+                  left: 120,
+                  top: 0,
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.red,
+                  ),
+                );
+              },
+              child: const Text('Hit me'),
+            ),
           ),
-        ),
-      ],
-    ));
+        ],
+      ),
+    );
   }
 }
 
@@ -162,7 +164,7 @@ class OverlayScreen extends StatelessWidget {
           child: Container(
             width: MediaQuery.of(context).size.width * 0.6,
             height: MediaQuery.of(context).size.height * 0.4,
-            color: Colors.deepOrange,
+            color: Colors.black12,
             child: const Center(
               child: Text(
                 'This is a pop-up dialog',
@@ -315,6 +317,9 @@ class _DataTableExampleState extends State<DataTableExample> {
             DataColumn(
               label: Text('Number'),
             ),
+            DataColumn(
+              label: Text('Action'),
+            ),
           ],
           rows: List<DataRow>.generate(
             numItems,
@@ -334,6 +339,7 @@ class _DataTableExampleState extends State<DataTableExample> {
                 },
               ),
               cells: <DataCell>[
+                DataCell(Text('Row $index')),
                 DataCell(Text('Row $index')),
               ],
               selected: selected[index],
@@ -422,7 +428,9 @@ class _ListWheelExampleScreenState extends State<ListWheelExampleScreen> {
     return Scaffold(
       appBar: AppBar(),
       body: ListWheelScrollView(
-        itemExtent: 80,
+        itemExtent: 180,
+        overAndUnderCenterOpacity: 0.7,
+        squeeze: 1.0,
         children: items,
       ),
     );
@@ -449,12 +457,12 @@ class _InteractiveExampleState extends State<InteractiveExample> {
   }
 }
 
-
 class RefreshIndicatorExample extends StatefulWidget {
   const RefreshIndicatorExample({super.key});
 
   @override
-  State<RefreshIndicatorExample> createState() => _RefreshIndicatorExampleState();
+  State<RefreshIndicatorExample> createState() =>
+      _RefreshIndicatorExampleState();
 }
 
 class _RefreshIndicatorExampleState extends State<RefreshIndicatorExample> {
@@ -473,7 +481,7 @@ class _RefreshIndicatorExampleState extends State<RefreshIndicatorExample> {
       appBar: AppBar(
         title: const Text('RefreshIndicator Sample'),
       ),
-      body: RefreshIndicator(
+      body: RefreshIndicator.adaptive(
         onRefresh: _refreshData,
         child: ListView.builder(
           itemCount: items.length,
@@ -487,7 +495,6 @@ class _RefreshIndicatorExampleState extends State<RefreshIndicatorExample> {
     );
   }
 }
-
 
 class ReorderableExample extends StatefulWidget {
   const ReorderableExample({super.key});
