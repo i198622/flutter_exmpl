@@ -4,6 +4,7 @@ import 'animations/main.dart';
 import 'autoroute/main.dart';
 import 'bloc/main.dart';
 import 'chat/main.dart';
+import 'databases/main.dart';
 import 'forms/main.dart';
 import 'go_router/main.dart';
 import 'modular/main.dart';
@@ -14,6 +15,7 @@ import 'rx/main.dart';
 import 'state_managment/main.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   // Go router
   // runApp(const EntryWidget());
 
@@ -47,5 +49,7 @@ void main() {
   // Animations
   // runApp(const AnimationEntryScreen());
 
-  runApp(const NewWidgetsEntry());
+  // runApp(const NewWidgetsEntry());
+
+  // runApp(const DatabaseEntry());
 }
