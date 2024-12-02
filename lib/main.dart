@@ -13,6 +13,7 @@ import 'new_widgets/main.dart';
 import 'redux/main.dart';
 import 'rx/main.dart';
 import 'state_managment/main.dart';
+import 'test_target/widgets/sample_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

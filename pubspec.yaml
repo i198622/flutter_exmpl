@@ -35,11 +35,14 @@ dependencies:
   path:
   workmanager: ^0.5.2
   flutter_local_notifications: ^18.0.1
+  mocktail: ^1.0.4
 
 dev_dependencies:
+  integration_test:
+    sdk: flutter
   flutter_test:
     sdk: flutter
-
+  test:
   flutter_lints: ^4.0.0
   auto_route_generator: ^9.0.0
   drift_dev: ^2.21.0
