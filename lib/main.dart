@@ -14,6 +14,7 @@ import 'redux/main.dart';
 import 'rx/main.dart';
 import 'state_managment/main.dart';
 import 'test_target/widgets/sample_screen.dart';
+import 'webview/entry.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,4 +54,5 @@ void main() {
   // runApp(const NewWidgetsEntry());
 
   // runApp(const DatabaseEntry());
+  runApp(const WebViewEntry());
 }

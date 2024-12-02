@@ -36,6 +36,7 @@ dependencies:
   workmanager: ^0.5.2
   flutter_local_notifications: ^18.0.1
   mocktail: ^1.0.4
+  webview_flutter: ^4.10.0
 
 dev_dependencies:
   integration_test:
