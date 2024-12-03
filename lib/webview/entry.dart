@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/basic.dart';
+import 'screens/browser.dart';
 import 'screens/simple.dart';
 
 class WebViewEntry extends StatelessWidget {
@@ -10,7 +11,8 @@ class WebViewEntry extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       // home: WebViewExample(),
-      home: SimpleWebViewScreen(),
+      // home: SimpleWebViewScreen(),
+      home: BrowserScreen(),
     );
   }
 }
