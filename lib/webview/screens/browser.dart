@@ -2,24 +2,22 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-WebViewEnvironment? webViewEnvironment;
-
 class MyInAppBrowser extends InAppBrowser {
   MyInAppBrowser({super.webViewEnvironment});
 
   @override
   Future onBrowserCreated() async {
-    print("Browser Created!");
+    print('Browser Created!');
   }
 
   @override
   Future onLoadStart(url) async {
-    print("Started $url");
+    print('Started $url');
   }
 
   @override
   Future onLoadStop(url) async {
-    print("Stopped $url");
+    print('Stopped $url');
   }
 
   @override
@@ -29,12 +27,12 @@ class MyInAppBrowser extends InAppBrowser {
 
   @override
   void onProgressChanged(progress) {
-    print("Progress: $progress");
+    print('Progress: $progress');
   }
 
   @override
   void onExit() {
-    print("Browser closed!");
+    print('Browser closed!');
   }
 }
 
@@ -46,7 +44,7 @@ class BrowserScreen extends StatefulWidget {
 }
 
 class _MyAppState extends State<BrowserScreen> {
-  final browser = MyInAppBrowser(webViewEnvironment: webViewEnvironment);
+  final browser = MyInAppBrowser();
 
   final settings = InAppBrowserClassSettings(
     browserSettings: InAppBrowserSettings(hideUrlBar: false),
@@ -63,11 +61,11 @@ class _MyAppState extends State<BrowserScreen> {
         child: ElevatedButton(
           onPressed: () {
             browser.openUrlRequest(
-              urlRequest: URLRequest(url: WebUri("https://flutter.dev")),
+              urlRequest: URLRequest(url: WebUri('https://flutter.dev')),
               settings: settings,
             );
           },
-          child: const Text("Open InAppBrowser"),
+          child: const Text('Open InAppBrowser'),
         ),
       ),
     );

@@ -5,14 +5,12 @@ import 'package:test/test.dart';
 class ApiServiceMock extends Mock implements ApiService {}
 
 void main() {
-
-
   group(
     'Mock service',
     () {
       test('test mock service', () async {
         final apiServiceMock = ApiServiceMock();
-        when(() => apiServiceMock.getUserName()).thenAnswer((_) => Future.value('user1'));
+        when(() => apiServiceMock.getUserName()).thenAnswer((_) => Future.value('user2'));
         expect(await apiServiceMock.getUserName(), 'user1');
       });
 

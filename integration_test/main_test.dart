@@ -15,7 +15,7 @@ void main() {
       final fab = find.byKey(const ValueKey('increment'));
       await tester.tap(fab);
       await tester.pumpAndSettle();
-      expect(find.text('1'), findsOneWidget);
+      expect(find.text('3'), findsOneWidget);
     });
   });
 }
