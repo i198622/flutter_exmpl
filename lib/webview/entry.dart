@@ -13,10 +13,10 @@ class WebViewEntry extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       // home: WebViewExample(),
-      home: SimpleWebViewScreen(),
+      // home: SimpleWebViewScreen(),
       // home: BrowserScreen(),
       // home: TabsBrowser(),
-      // home: UrlLauncher(),
+      home: UrlLauncher(),
     );
   }
 }

@@ -85,7 +85,7 @@ class _SimpleWebViewScreenState extends State<SimpleWebViewScreen> {
   }
 }
 
-final kHtml = """
+const kHtml = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,7 +96,7 @@ final kHtml = """
   
   <script>
     document.addEventListener('message', () => {
-      alert("asdasd");
+      alert("message");
     });
     
     function MyFunc() {

@@ -30,12 +30,15 @@ class _TabsBrowserState extends State<TabsBrowser> {
 
   @override
   void initState() {
-    browser.addMenuItem(ChromeSafariBrowserMenuItem(
+    browser.addMenuItem(
+      ChromeSafariBrowserMenuItem(
         id: 1,
         label: 'Menu 1',
         onClick: (url, title) {
           print('Menu clicked');
-        }));
+        },
+      ),
+    );
     super.initState();
   }
 
@@ -50,7 +53,10 @@ class _TabsBrowserState extends State<TabsBrowser> {
           onPressed: () async {
             await browser.open(
               url: WebUri('https://flutter.dev/'),
-              settings: ChromeSafariBrowserSettings(shareState: CustomTabsShareState.SHARE_STATE_OFF, barCollapsingEnabled: true),
+              settings: ChromeSafariBrowserSettings(
+                shareState: CustomTabsShareState.SHARE_STATE_OFF,
+                barCollapsingEnabled: true,
+              ),
             );
           },
           child: const Text('Open Chrome Safari Browser'),

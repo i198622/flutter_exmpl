@@ -10,6 +10,8 @@ class MyInAppBrowser extends InAppBrowser {
     print('Browser Created!');
   }
 
+
+
   @override
   Future onLoadStart(url) async {
     print('Started $url');
