@@ -48,6 +48,7 @@ dependencies:
   quick_actions: ^1.0.8
   cached_network_image: ^3.4.1
   package_info_plus: ^8.1.1
+  flutter_native_splash: ^2.4.3
 
 dev_dependencies:
   integration_test:
