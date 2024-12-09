@@ -50,6 +50,7 @@ dependencies:
   package_info_plus: ^8.1.1
   flutter_native_splash: ^2.4.3
   pretty_qr_code:
+  mobile_scanner: ^6.0.2
 
 dev_dependencies:
   integration_test:

@@ -6,6 +6,7 @@ import 'screens/image_picker.dart';
 import 'screens/images_screen.dart';
 import 'screens/info_screen.dart';
 import 'screens/qrcode_generator_screen.dart';
+import 'screens/qrcode_scanner.dart';
 import 'screens/quick_actions.dart';
 import 'screens/splash_screen.dart';
 import 'screens/svg_screen.dart';
@@ -21,7 +22,8 @@ class PluginsEntry extends StatelessWidget {
       // home: QuickActionScreen(),
       // home: ImagesScreen(),
       // home: InfoScreen(),
-      home: QrCodeGeneratorScreen(),
+      // home: QrCodeGeneratorScreen(),
+      home: BarcodeScannerSimple(),
       // home: CameraScreen(),
       // home: SvgScreen(),
       // home: ImagePickerScreen(),
