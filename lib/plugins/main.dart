@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/camera.dart';
+import 'screens/image_picker.dart';
 import 'screens/svg_screen.dart';
 
 class PluginsEntry extends StatelessWidget {
@@ -10,7 +11,8 @@ class PluginsEntry extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // home: CameraScreen(),
-      home: SvgScreen(),
+      // home: SvgScreen(),
+      home: ImagePickerScreen(),
     );
   }
 }
