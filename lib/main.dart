@@ -21,7 +21,7 @@ import 'webview/entry.dart';
 
 void main() async {
   setupSplash();
-  // WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   //
   // await initCameras();
 
