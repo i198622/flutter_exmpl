@@ -10,14 +10,19 @@ import 'go_router/main.dart';
 import 'modular/main.dart';
 import 'navigation/main.dart';
 import 'new_widgets/main.dart';
+import 'plugins/main.dart';
+import 'plugins/screens/camera.dart';
 import 'redux/main.dart';
 import 'rx/main.dart';
 import 'state_managment/main.dart';
 import 'test_target/widgets/sample_screen.dart';
 import 'webview/entry.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await initCameras();
+
   // Go router
   // runApp(const EntryWidget());
 
@@ -54,5 +59,7 @@ void main() {
   // runApp(const NewWidgetsEntry());
 
   // runApp(const DatabaseEntry());
-  runApp(const WebViewEntry());
+  // runApp(const WebViewEntry());
+
+  runApp(const PluginsEntry());
 }
