@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/camera.dart';
+import 'screens/svg_screen.dart';
 
 class PluginsEntry extends StatelessWidget {
   const PluginsEntry({super.key});
@@ -8,7 +9,8 @@ class PluginsEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CameraScreen(),
+      // home: CameraScreen(),
+      home: SvgScreen(),
     );
   }
 }
