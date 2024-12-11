@@ -52,6 +52,8 @@ dependencies:
   pretty_qr_code:
   mobile_scanner: ^6.0.2
   redux_thunk:
+  mobx: ^2.4.0
+  flutter_mobx: ^2.2.1+1
 
 dev_dependencies:
   integration_test:
@@ -64,6 +66,7 @@ dev_dependencies:
   drift_dev: ^2.21.0
   hive_generator:
   build_runner:
+  mobx_codegen: ^2.6.2
 
 flutter:
   uses-material-design: true

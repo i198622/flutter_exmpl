@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'animations/main.dart';
 import 'autoroute/main.dart';
 import 'bloc/main.dart';
+import 'bloc_events/main.dart';
 import 'chat/main.dart';
 import 'databases/main.dart';
 import 'forms/main.dart';
 import 'go_router/main.dart';
+import 'mobx/main.dart';
 import 'modular/main.dart';
 import 'navigation/main.dart';
 import 'new_widgets/main.dart';
@@ -50,7 +52,7 @@ void main() async {
   // runApp(const StateEntry());
 
   // Redux state management
-  runApp(const ReduxEntry());
+  // runApp(const ReduxEntry());
 
   // Forms
   // runApp(const EntryForms());
@@ -64,4 +66,9 @@ void main() async {
   // runApp(const WebViewEntry());
 
   // runApp(const PluginsEntry());
+
+
+  // runApp(MobxEntryScreen());
+
+  runApp(const BlocEventsEntryWidget());
 }
