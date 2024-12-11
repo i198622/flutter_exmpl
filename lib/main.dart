@@ -50,7 +50,7 @@ void main() async {
   // runApp(const StateEntry());
 
   // Redux state management
-  // runApp(const ReduxEntry());
+  runApp(const ReduxEntry());
 
   // Forms
   // runApp(const EntryForms());
@@ -63,5 +63,5 @@ void main() async {
   // runApp(const DatabaseEntry());
   // runApp(const WebViewEntry());
 
-  runApp(const PluginsEntry());
+  // runApp(const PluginsEntry());
 }

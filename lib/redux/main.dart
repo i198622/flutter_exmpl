@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux_thunk/redux_thunk.dart';
 
-enum Actions { increment, decrement }
+import 'controller/controller.dart';
+import 'models/app_state_model.dart';
+import 'reducers/app_reducer.dart';
+import 'selectors/selectors.dart';
+import 'vm/auth_vm.dart';
 
-int counterReducer(int state, action) {
-  switch(action) {
-    case Actions.increment:
-      return state + 1;
-    case Actions.decrement:
-      return state - 1;
-    default:
-      return state;
-  }
-}
+final store = Store<AppState>(
+  appReducer,
+  initialState: AppState.initial(),
+  middleware: [thunkMiddleware],
+);
 
 class ReduxEntry extends StatelessWidget {
   const ReduxEntry({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final store = Store<int>(counterReducer, initialState: 0);
-
     return StoreProvider(
       store: store,
       child: MaterialApp(
@@ -29,37 +27,35 @@ class ReduxEntry extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Redux'),
           ),
-          body: Column(
-            children: [
-              StoreConnector<int, String>(
-                builder: (context, value) {
-                  return Text(value);
-                },
-                converter: (s) => s.state.toString(),
-              ),
-              StoreConnector<int, VoidCallback>(
-                builder: (context, cb) {
-                  return TextButton(
-                    onPressed: cb,
-                    child: const Text('Increment'),
-                  );
-                },
-                converter: (s) {
-                  return () => s.dispatch(Actions.increment);
-                },
-              ),
-              StoreConnector<int, VoidCallback>(
-                builder: (context, cb) {
-                  return TextButton(
-                    onPressed: cb,
-                    child: const Text('Decrement'),
-                  );
-                },
-                converter: (s) {
-                  return () => s.dispatch(Actions.decrement);
-                },
-              ),
-            ],
+          body: Center(
+            child: StoreConnector<AppState, AuthViewModel>(
+              builder: (context, vm) {
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    if (vm.state.isLoading)
+                      const CircularProgressIndicator(),
+                    if (!vm.state.isLoading)
+                      Text(vm.state.state.name),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    if (vm.state.state == AuthenticationState.unauthenticated)
+                      TextButton(
+                        onPressed: vm.login,
+                        child: const Text('Login'),
+                      )
+                    else if (vm.state.state == AuthenticationState.authenticated)
+                      TextButton(
+                        onPressed: vm.logout,
+                        child: const Text('Logout'),
+                      )
+                  ],
+                );
+              },
+              converter: AuthViewModel.fromStore,
+            ),
           ),
         ),
       ),
