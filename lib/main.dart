@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'animations/main.dart';
+import 'architecture/core/container.dart';
+import 'architecture/main.dart';
 import 'autoroute/main.dart';
 import 'bloc/main.dart';
 import 'bloc_events/main.dart';
@@ -24,6 +26,8 @@ import 'webview/entry.dart';
 void main() async {
   setupSplash();
   WidgetsFlutterBinding.ensureInitialized();
+
+  await initializeDependencies();
   //
   // await initCameras();
 
@@ -70,5 +74,6 @@ void main() async {
 
   // runApp(MobxEntryScreen());
 
-  runApp(const BlocEventsEntryWidget());
+  // runApp(const BlocEventsEntryWidget());
+  runApp(const AppMainEntry());
 }
